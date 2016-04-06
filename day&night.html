@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            .set-day {
+                fill: yellow;
+                stroke: black;
+                stroke-width: 1px;
+            }
+            .set-night {
+                fill: black;
+                stroke: black;
+                stroke-width: 1px;
+            }
+            .ambiant-background {
+                fill: white;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" />
+        <script>
+
+        $(document).on('click', '.set-day', null, function()  {
+            $('.ambiant-background').removeClass('night').addClass('day');
+        });
+        $(document).on('click', '.set-night', null, function()  {
+            $('.ambiant-background').removeClass('day').addClass('night');
+        });
+        </script>
+    </head>
+    <body>
+        <!-- Circles -->
+        <svg height="100%" width="100%">
+            <rect x="0" y="0" width="100%" height="100%" class="ambiant-background" />
+            <rect x="20" y="20" width="50" height="50" class="set-day" />
+            <rect x="90" y="20" width="50" height="50" class="set-night"/>
+        </svg>
+    </body>
+</html>
